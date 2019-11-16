@@ -43,6 +43,10 @@ class UserController extends MX_Controller
 		$row_data['user_type'] = $this->input->post('user_type');
 		$row_data['user_status'] = $this->input->post('user_status');
 		$row_data['registered_date'] = date('Y-m-d');
+		$row_data['district_name'] = $this->input->post('district_name');
+		$row_data['mr_number'] = $this->input->post('mr_number');
+		$row_data['no_number'] = $this->input->post('no_number');
+
 		$row_data['user_pass'] = md5($this->input->post('user_pass'));
 		$this->form_validation->set_rules('user_name', 'Category Title', 'trim|required');
 		$this->form_validation->set_rules('user_phone', 'Category Title', 'trim|required');
@@ -89,6 +93,9 @@ class UserController extends MX_Controller
 	{
 		$data['user'] = $this->MainModel->getSingleData('user_id', $id, 'users', '*');
 		$user_id = $data['user']->user_id;
+		$districts_query = "SELECT name FROM `districts` order by id ASC ";
+		$data['districts'] = $this->MainModel->AllQueryDalta($districts_query);
+
 		if (isset($user_id)) {
 			$data['title'] = "User update page ";
 			$data['main'] = "User";
@@ -101,6 +108,22 @@ class UserController extends MX_Controller
 		}
 	}
 
+	public function email_check()
+	{
+
+		$email = $this->input->post('email');
+		$result = $this->MainModel->getSingleData('user_email', $email, 'users', '*');
+		if ($result) {
+
+			echo 'not';
+		} else {
+
+			echo 'unique';
+
+
+		}
+	}
+
 	public function update()
 	{
 		$user_id = $this->input->post('user_id');
@@ -109,6 +132,9 @@ class UserController extends MX_Controller
 		$row_data['user_email'] = $this->input->post('user_email');
 		$row_data['user_type'] = $this->input->post('user_type');
 		$row_data['user_status'] = $this->input->post('user_status');
+		$row_data['district_name'] = $this->input->post('district_name');
+		$row_data['mr_number'] = $this->input->post('mr_number');
+		$row_data['no_number'] = $this->input->post('no_number');
 		$row_data['registered_date'] = date('Y-m-d');
 		if($this->input->post('user_pass')) {
 			$row_data['user_pass'] = md5($this->input->post('user_pass'));
@@ -156,20 +182,6 @@ class UserController extends MX_Controller
 
 
 
-	public function destroy($id)
-	{
-//		$data['category'] = $this->MainModel->getSingleData('category_id', $id, 'category', '*');
-//		$category_id = $data['category']->category_id;
-//		if (isset($category_id)) {
-//			$result = $this->MainModel->deleteData('category_id', $id, 'category');
-//			if ($result) {
-//				$this->session->set_flashdata('message', "Category deleted successfully !!!!");
-//				redirect('category-list');
-//			}
-//		} else {
-//			$this->session->set_flashdata('message', "The element you are trying to delete does not exist.");
-//			redirect('category-list');
-//		}
-	}
+
 
 }

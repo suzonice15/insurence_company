@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login to Admin panel</title>
+	<title><?= get_option('site_title') ?></title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -35,7 +35,7 @@
 <br>
 <div class="col-md-offset-4 col-md-4">
 	<div class="register-logo">
-		<a href="#"> Ekushey Shop Admin panel</a>
+		<a href="#"><?= get_option('site_title') ?></a>
 	</div>
 
 	<div class="register-box-body " >

@@ -1,72 +1,104 @@
 <div class="col-md-offset-0 col-md-12">
 <div class="box  box-success">
 	<div class="box-header with-border">
-
-
 		<div class="row">
-
-				<a href="<?=base_url('user-create')?>" class="btn btn-success pull-right">Add New</a>
-
-
-
-
+			<a href="<?=base_url('customer/CustomerController/create')?>" class="btn btn-success pull-right">Add New</a>
 		</div>
 	</div>
 	<div class="box-body">
 <div class="table-responsive" id="ajaxdata">
-		<table id="examplje1" class="table table-bordered table-striped table-responsive ">
+		<table id="example1" class="table table-bordered table-striped table-responsive ">
 			<thead>
+
+
 			<tr>
 				<th>Sl</th>
-				<th >Picture</th>
+				<th >No</th>
 				<th >Name </th>
-				<th >Phone </th>
-				<th >Email </th>
-				<th >Status </th>
-				<th >Type </th>
-				<th >date </th>
+				<th >Certificate </th>
+				<th >Vihicle number </th>
+				<th >Created date </th>
+				<th >Renew date </th>
+				<?php
+				$user_type=$this->session->userdata('user_type');
+
+
+
+
+				?>
 				<th >Action </th>
+
+				
 			</tr>
 			</thead>
 			<tbody>
-			<?php if (isset($users)){
+			<?php
+
+
+
+			if (isset($users)){
             $count = 0;
             foreach ($users as $user) {
 
-    ?>
-    <tr>
+				?>
+				<tr>
 
 
-        <td><?php echo ++$count; ?></td>
-        <td>
-<?php if($user->user_picture) :?>
-		<img src="<?php echo base_url();echo $user->user_picture ?> " width="50" height="50"/>
+				<td><?php echo ++$count; ?></td>
+				<td><?php echo $user->insurence_data_no; ?></td>
+				<td><?php echo $user->customer_name; ?></td>
+				<td><?php echo $user->insurence_data_certificate; ?></td>
+				<td><?php echo $user->insurence_data_vehicle_mark_number; ?></td>
+				<td><?php echo $user->created_date; ?></td>
+				<td><?php echo $user->insurence_data_notice_date; ?></td>
 
-				<?php else :?>
-					<img src="<?php echo base_url() ?>uploads/user/user.png" width="50" height="50"/>
-<?php endif;?>
+
+				<?php
+				$user_type = $this->session->userdata('user_type');
+
+				if ($user_type == 'admin') {
+
+
+					?>
+					<td>
+						<a title="Print"
+						   href="<?php echo base_url() ?>customer/CustomerController/print_result/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon  glyphicon-print btn btn-instagram"></span>
+						</a>
+						<a title="Show"
+						   href="<?php echo base_url() ?>customer-show/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon glyphicon-eye-open btn btn-info"></span>
+						</a>
+						<a title="edit"
+						   href="<?php echo base_url() ?>customer-edit/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon glyphicon-edit btn btn-success"></span>
+						</a>
+						<a title="delete"
+						   onclick="return confirm('Are you want to delete this information :press Ok for delete otherwise Cancel')"
+						   href="<?php echo base_url() ?>customer-delete/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon glyphicon-trash btn btn-danger"></span>
+						</a>
 					</td>
-        <td><?php echo $user->user_name; ?></td>
-        <td><?php echo $user->user_phone; ?></td>
-        <td><?php echo $user->user_email; ?></td>
-        <td><?php $userr= $user->user_status=='active' ? 'Active' : 'Inactive';echo $userr;?></td>
-		<td><?php echo $user->user_type; ?></td>
-		<td><?php echo date('d-m-Y',strtotime($user->registered_date)); ?></td>
-        <td>
-			<a title="edit"
-			   href="<?php echo base_url() ?>user-edit/<?php echo $user->user_id ?>"
-			<span class="glyphicon glyphicon-edit btn btn-success"></span>
-			</a>
 
-			<!---->
-			<!--//												if($user_type=='admin' || $user_type=='super-admin')-->
-			<!--//												{-->
-			
-		</td>
+				<?php } else { ?>
 
-    </tr>
+					<td>
+						<a title="Print"
+						   href="<?php echo base_url() ?>customer/CustomerController/print_result/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon  glyphicon-print btn btn-instagram"></span>
+						</a>
+						<a title="Show"
+						   href="<?php echo base_url() ?>customer-show/<?php echo $user->insurence_data_id ?>"
+						<span class="glyphicon glyphicon-eye-open btn btn-info"></span>
+						</a>
 
-			<?php }} ?>
+					</td>
+
+
+				<?php }
+			}
+			} ?>
+				</tr>
 			</tbody>
 
 		</table>

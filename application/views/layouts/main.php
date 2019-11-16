@@ -3,7 +3,7 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header" style="margin-bottom: -21px;">
         <h1>
             <?php if (isset($main)) echo $main; ?>
             <small>Control panel</small>
@@ -78,13 +78,6 @@
 
 		?>
 
-		<div style="margin-bottom: -8px;" class="callout callout-success">
-
-
-			<p>Welcome to Ekusheyshop
-
-				</p>
-		</div>
 
 	<?php
 	}

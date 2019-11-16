@@ -29,27 +29,8 @@ class SettingController extends MX_Controller
 	    
 
 			$data = array();
-			$data['site_title'] = $this->input->post('site_title');
-			$data['logo'] = $this->input->post('logo');
-			$data['icon'] = $this->input->post('icon');
-			$data['phone'] = $this->input->post('phone');
-			$data['phone_order'] = $this->input->post('phone_order');
-			$data['email'] = $this->input->post('email');
-			$data['admin_email'] = $this->input->post('admin_email');
-			$data['support_box'] = $this->input->post('support_box');
-			$data['footer'] = $this->input->post('footer');
-			$data['copyright'] = $this->input->post('copyright');
-			$data['default_product_terms'] = $this->input->post('default_product_terms');
-
-			$data['shipping_charge_in_dhaka'] = $this->input->post('shipping_charge_in_dhaka');
-			$data['shipping_charge_out_of_dhaka'] = $this->input->post('shipping_charge_out_of_dhaka');
-			$data['delevery_timing'] = $this->input->post('delevery_timing');
-			$data['customer_service'] 	= $this->input->post('customer_service');
-			$data['easy_return'] 		= $this->input->post('easy_return');
-			$data['bkash_payment'] 		= $this->input->post('bkash_payment');
-			$data['home_pomosion_title'] 		= $this->input->post('home_pomosion_title');
-			$data['home_pomosion_sub_title'] 		= $this->input->post('home_pomosion_sub_title');
-			$data['home_pomosion_link'] 		= $this->input->post('home_pomosion_link');
+			$data['mr_number'] = $this->input->post('mr_number');
+			$data['no_number'] = $this->input->post('no_number');
 
 			foreach ($data as $key => $val) {
 				update_option($key, $val);

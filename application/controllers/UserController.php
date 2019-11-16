@@ -44,9 +44,12 @@ where users.user_pass='$password' and users.user_email='$email' and users.user_s
 				$data['user_name'] = $userResult->user_name;
 				$data['user_type'] = $userResult->user_type;
 				$data['user_picture'] = $userResult->user_picture;
-				$data['user_status'] = $userResult->user_status;
+				 $data['district_name'] = $userResult->district_name;
+				 $data['user_status'] = $userResult->user_status;
 				$data['user_type'] = $userResult->user_type;
-
+				$data['user_id'] = $userResult->user_id;
+				 $data['mr_number'] = $userResult->mr_number;
+				 $data['no_number'] = $userResult->no_number;
 				$data['registered_date'] = date('j,M,Y',strtotime($userResult->registered_date));
 				$this->session->set_userdata($data);
 				redirect('dashboard');

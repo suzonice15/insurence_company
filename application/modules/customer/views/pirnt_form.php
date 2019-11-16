@@ -45,21 +45,10 @@
 			<?php endforeach; ?>
 		</select>
 	</div>
+
 	<div class="form-group "><label for="media_title">Password</label>
 		<input
 			type="password"  class="form-control" name="user_pass" 	>
-
-
-	</div>
-	<div class="form-group "><label for="media_title">NO Number</label>
-		<input
-			type="text"  class="form-control" name="no_number" value="<?php if(isset($user)) { echo $user->no_number;}?>"	>
-
-
-	</div>
-	<div class="form-group "><label for="media_title">MR Number </label>
-		<input
-			type="text"  class="form-control" name="mr_number"  value="<?php if(isset($user)) { echo $user->mr_number;}?>"	>
 
 
 	</div>

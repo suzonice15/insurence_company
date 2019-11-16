@@ -26,6 +26,7 @@
 
 	document.forms['user'].elements['user_status'].value="<?php echo $user->user_status;?>";
 	document.forms['user'].elements['user_type'].value="<?php echo $user->user_type;?>";
+	document.forms['user'].elements['district_name'].value="<?php echo $user->district_name;?>";
 
 
 </script>

@@ -13,9 +13,6 @@ $route['admin'] = 'UserController';
 $route['dashboard'] = 'DashboardController';
 $route['login-check'] = 'UserController/loginCheck';
 $route['logout'] = 'UserController/logOut';
-$route['promotion-update'] = 'management/promotionsController/update';
-
-
 /************************ user  ************************/
 
 $route['users'] = 'user/UserController/index';
@@ -27,15 +24,23 @@ $route['logout'] = 'UserController/logOut';
 
 
 
+/****************************** setting ***************************************/
 
-/****************************** Page ***************************************/
+$route['setting-default'] = 'setting/SettingController/default_setting';
+$route['setting-home'] = 'setting/SettingController/home';
 
-$route['page-list'] = 'page/PageController/index';
-$route['page-create'] = 'page/PageController/create';
-$route['page-save'] = 'page/PageController/store';
-$route['page-edit/(:any)'] = 'page/PageController/edit/$1';
-$route['page-update'] = 'page/PageController/update';
-$route['page-delete/(:any)'] = 'page/PageController/destroy/$1';
+/****************************** Customer ***************************************/
+//
+//$route['page-list'] = 'page/PageController/index';
+//$route['page-create'] = 'page/PageController/create';
+//$route['page-save'] = 'page/PageController/store';
+$route['customer-edit/(:any)'] = 'customer/CustomerController/edit/$1';
+$route['customer_information'] = 'customer/CustomerController/customer_information';
+$route['notification-edit/(:any)'] = 'customer/CustomerController/notification_edit/$1';
+$route['customer-show/(:any)'] = 'customer/CustomerController/show/$1';
+$route['customer-update'] = 'customer/CustomerController/customer_update';
+$route['notification-update'] = 'customer/CustomerController/notification_update';
+$route['customer-delete/(:any)'] = 'customer/CustomerController/destroy/$1';
 
 
 

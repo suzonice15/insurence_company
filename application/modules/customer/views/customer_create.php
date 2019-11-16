@@ -9,11 +9,30 @@
         <div class="box-body">
 
 
-		<form action="<?php echo base_url()?>user-save"  method="post" enctype="multipart/form-data" >
-		<?php $this->load->view('users_form');?>
+		<form action="<?php echo base_url()?>customer/CustomerController/store"  method="post" enctype="multipart/form-data" >
+            <div class="box-body">
+                <div class="form-group "><label for="media_title">Name<span class="required">*</span></label>
+                    <input
+                        type="text" required class="form-control" name="customer_information_name"  value=""	>
 
-			<div class="box-footer">
-				<input type="submit" class="btn btn-success pull-left" value="Save"/>
+                </div>
+
+                <div class="form-group "><label for="media_title">Phone<span class="required">*</span></label>
+                    <input
+                        type="text" required class="form-control" name="customer_information_mobile"  value=""	>
+
+
+                </div>
+
+                <div class="form-group "><label for="media_title">Email<span class="required">*</span></label>
+                    <input
+                        type="text" id="user_email" required class="form-control" name="customer_information_email" value=""                   <span id="user_email_error"></span>
+                </div>
+
+
+
+            <div class="box-footer">
+				<input type="submit" class="btn btn-success pull-left" value="Priview"/>
 
 			</div>
 		</form>
@@ -38,7 +57,7 @@
                 {
 
                     $.ajax({
-                        url:"<?php echo base_url()?>user/userController/email_check",
+                        url:"<?php echo base_url()?>customer/CustomerController/email_check",
                         method:"POST",
                         data:{email:email},
                         success:function(result)

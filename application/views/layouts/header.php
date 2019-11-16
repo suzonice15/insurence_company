@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+
+<?php 
+	date_default_timezone_set('Asia/dhaka');
+
+		$date = date('Y-m-d', strtotime('+11 month'));
+		$today_date = date('Y-m-d');
+
+$query="SELECT count(insurence_data_id)as insurence_data_id FROM `insurence_data` WHERE insurence_data_notice_date > CURDATE() and  insurence_data_act_last_date > '$today_date' and insurence_data_notification_active=1";
+		$users=$this->MainModel->AllQueryDalta($query);
+		foreach ($users as $user);
+		$user_count=$user->insurence_data_id;
+		
+?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Insurence company | admin panel </title>
+  <title><?= get_option('site_title') ?> </title>
 <!--	<link rel="icon" type="img/gif" href="--><?php //echo base_url()?><!--uploads/favicon.ico" sizes="16x16">-->
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -113,11 +127,15 @@
 								<!-- Menu Body -->
 
 								<li class="user-footer">
+																<!-- Menu Body
+
 									<div class="pull-left">
 										<a href="#" class="btn btn-default btn-flat">Profile</a>
 									</div>
+									
+									 -->
 									<div class="pull-right">
-										<a href="<?php echo base_url()?>logout" class="btn btn-default btn-flat">Sign out</a>
+										<a href="<?php echo base_url()?>logout" class="btn btn-success btn-flat">Sign out</a>
 									</div>
 								</li>
 							</ul>
