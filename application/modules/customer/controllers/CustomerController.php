@@ -7,6 +7,10 @@ class CustomerController extends MX_Controller
 	public function __construct()
 	{
 		$this->load->model('MainModel');
+		$user_id=$this->session->userdata('user_id');
+		if(empty($user_id)){
+			redirect('admin');
+		}
 
 
 	}

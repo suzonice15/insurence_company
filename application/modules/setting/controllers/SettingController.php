@@ -29,8 +29,8 @@ class SettingController extends MX_Controller
 	    
 
 			$data = array();
-			$data['mr_number'] = $this->input->post('mr_number');
-			$data['no_number'] = $this->input->post('no_number');
+			//$data['mr_number'] = $this->input->post('mr_number');
+			$data['site_title'] = $this->input->post('site_title');
 
 			foreach ($data as $key => $val) {
 				update_option($key, $val);

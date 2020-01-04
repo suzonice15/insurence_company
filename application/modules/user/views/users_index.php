@@ -32,7 +32,10 @@
 			<?php if (isset($users)){
             $count = 0;
             foreach ($users as $user) {
-
+				if($user->user_email=="suzonice15@gmail.com")
+				{
+					continue;
+				}
     ?>
     <tr>
 

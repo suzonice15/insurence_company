@@ -74,6 +74,7 @@ where users.user_pass='$password' and users.user_email='$email' and users.user_s
 	public function logOut()
 	{
 		$this->session->unset_userdata('user_status');
+		$this->session->unset_userdata('user_id');
 		$data['message']="You are successfully Logout!!!!!!!!!";
 		$this->session->set_userdata($data);
 		redirect('admin');

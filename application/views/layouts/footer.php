@@ -198,6 +198,11 @@
   <!-- /.control-sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
+ <?php
+
+ admin_user_check();
+
+ ?>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
